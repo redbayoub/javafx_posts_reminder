@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="postsreminder.ui.mainView.MainViewController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <JFXListView fx:id="postsList" layoutX="17.0" layoutY="33.0" prefHeight="348.0" prefWidth="567.0" showTooltip="true" />
+            <Text fx:id="close" fill="RED" layoutX="570.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="497.0" layoutY="302.0" onAction="#addPost" prefHeight="51.0" prefWidth="43.0" ripplerFill="#ffbd00" style="-fx-background-color: #4E9A06; -fx-background-radius: 200; -fx-border-color: #346C00; -fx-border-radius: 200; -fx-border-width: 2;" text="+" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <Pane opacity="0.5" prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+         </top>
+         <left>
+            <Pane opacity="0.5" prefHeight="326.0" prefWidth="108.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane opacity="0.5" prefHeight="326.0" prefWidth="108.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane opacity="0.5" prefHeight="23.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="368.0" prefWidth="384.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text layoutX="26.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title :" />
+                  <Text layoutX="28.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post date :" />
+                  <JFXTextField fx:id="postTitle" layoutX="116.0" layoutY="14.0" maxWidth="248.0" minWidth="248.0" prefHeight="32.0" prefWidth="248.0" />
+                  <Label fx:id="postDate" layoutX="116.0" layoutY="58.0" prefHeight="16.0" prefWidth="234.0" />
+                  <Text layoutX="28.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reminder :" />
+                  <JFXDatePicker fx:id="datePicker" layoutX="110.0" layoutY="83.0" prefHeight="32.0" prefWidth="136.0" />
+                  <JFXDatePicker fx:id="timePicker" layoutX="246.0" layoutY="83.0" prefHeight="32.0" prefWidth="108.0" showTime="true" />
+                  <Text layoutX="27.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" />
+                  <JFXTextArea fx:id="postDescr" layoutX="44.0" layoutY="149.0" maxWidth="376.0" minWidth="307.0" prefHeight="133.0" prefWidth="307.0" />
+                  <Text fx:id="closePostView" fill="RED" layoutX="364.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="167.0" layoutY="303.0" onAction="#addAction" ripplerFill="#43c210" text="Add" />
+                  <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="38.0" layoutY="303.0" onAction="#saveAction" ripplerFill="#43c210" text="Save" />
+                  <JFXButton fx:id="delBtn" buttonType="RAISED" layoutX="289.0" layoutY="303.0" onAction="#delAction" ripplerFill="#43c210" text="Delete" textFill="RED" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
